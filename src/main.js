@@ -41,7 +41,9 @@ Hooks.on('init', () => {
     const defaultOption = ItemSheet.defaultOptions;
     defaultOption.dragDrop.push({dragSelector: '.item-list .item', dropSelector: null});
     Object.defineProperty(ItemSheet, 'defaultOptions', {
-        get: () => defaultOption
+        get: () => {
+            return defaultOption;
+        }
     });
 
 
