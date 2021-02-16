@@ -38,12 +38,8 @@ Hooks.on('init', () => {
         }
     };
 
-    const originalDefaultOptions = ItemSheet.defaultOptions;
-    ItemSheet.defaultOptions = () => {
-        console.dir(this);
-        console.dir(originalDefaultOptions());
-        return originalDefaultOptions();
-    };
+    ItemSheet.defaultOptions.dragDrop.push({dragSelector: '.item-list .item', dropSelector: null});
+
 
     // /** @override */
     // async _onDrop(event) {
