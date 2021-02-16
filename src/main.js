@@ -38,6 +38,13 @@ Hooks.on('init', () => {
         }
     };
 
+    const originalDefaultOptions = ItemSheet.defaultOptions;
+    ItemSheet.defaultOptions = () => {
+        console.dir(this);
+        console.dir(originalDefaultOptions());
+        return originalDefaultOptions();
+    };
+
     // /** @override */
     // async _onDrop(event) {
     //     // Try to extract the data
