@@ -3,7 +3,12 @@
 Hooks.on('init', () => {
 
     document.addEventListener('drop', async (event) => {
-        if (event.target.nodeName !== 'INPUT' && event.target.nodeName !== 'TEXTAREA') {
+        if (
+            event.target.nodeName !== 'INPUT' &&
+            event.target.nodeName !== 'TEXTAREA' ||
+            event.target.nodeName === 'INPUT' && event.target.type !== 'text' ||
+            event.target.nodeName === 'INPUT' && event.target.readOnly ||
+            event.target.nodeName === 'TEXTAREA' && event.target.readOnly) {
             return;
         }
         try {
