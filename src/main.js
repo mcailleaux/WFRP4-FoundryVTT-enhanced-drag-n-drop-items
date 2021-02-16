@@ -2,6 +2,15 @@
 
 Hooks.on('init', () => {
 
+    document.addEventListener('drop', (event) => {
+        try {
+            const data = JSON.parse(event.dataTransfer.getData('text/plain'));
+            console.dir(data);
+        } catch (err) {
+            return false;
+        }
+    });
+
     const originalCanDragHandler = ItemSheet.prototype._canDragStart;
     ItemSheet.prototype._canDragStart = async (event) => {
         console.dir(this);
