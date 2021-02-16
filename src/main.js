@@ -2,7 +2,7 @@
 
 Hooks.on('init', () => {
     document.addEventListener('drop', (event) => {
-        console.dir(data);
+        console.dir(event);
     });
 });
 
