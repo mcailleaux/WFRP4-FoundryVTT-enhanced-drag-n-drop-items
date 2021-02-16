@@ -1,7 +1,7 @@
 'use strict';
 
 Hooks.on('init', () => {
-    document.addEventListener("drop", (event) => {
+    document.addEventListener('drop', (event) => {
         console.dir(data);
     });
 });
