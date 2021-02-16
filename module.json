@@ -1,0 +1,30 @@
+{
+  "name": "enhanced-drag-n-drop-items",
+  "title": "Enhanced Drag and Drop Items",
+  "description": "When Drop object on input or textArea with class specified on config for items type, the name of item is added to the input or textarea value.",
+  "version": "1.0.0",
+  "minimumCoreVersion" : "0.7.9",
+  "compatibleCoreVersion" : "0.7.9",
+  "author": "Skeroujvapluvit",
+  "esmodules": [
+    "src/main.js"
+  ],
+  "languages": [
+    {
+      "lang": "en",
+      "name": "English",
+      "path": "lang/en.json"
+    },
+    {
+      "lang": "fr",
+      "name": "Français",
+      "path": "lang/fr.json"
+    }
+  ],
+  "url": "",
+  "download": "",
+  "manifest": "",
+  "readme": "",
+  "changelog": "",
+  "bugs": ""
+}
