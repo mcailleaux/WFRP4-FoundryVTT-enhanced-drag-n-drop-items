@@ -18,6 +18,7 @@
     "skipDefaultLibCheck": true,
     "skipLibCheck": true,
     "sourceMap": true,
+    "sourceRoot": "./src",
     "strictNullChecks": true,
     "target": "es6",
     "types": [
