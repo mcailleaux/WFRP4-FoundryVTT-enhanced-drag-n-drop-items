@@ -40,6 +40,6 @@ deploy:
     - git add -f dist/wfrp4-enhanced-drag-n-drop-items.zip
     - git commit -m "push artifact on dist branch"
     - git remote set-url origin $GIT_SSH_URL
-    - git push origin HEAD:dist
+    - git push origin dist
   only:
     - master
