@@ -47,13 +47,13 @@ async function dropItem(item: Item, sheet: ItemSheet) {
 
     switch (`${sheet.item?.type?.toLowerCase()}-${item.type?.toLowerCase()}`) {
         case 'career-skill':
-            const currentSkills = sheet.item?.data?.data?.skills ?? [];
+            const currentSkills = filterEmpty(sheet.item?.data?.data?.skills);
             currentSkills.push(item.name);
             sheet.item?.update({'data.skills': currentSkills});
             break;
         case 'career-talent':
         case 'career-trait':
-            const currentTalents = sheet.item?.data?.data?.talents ?? [];
+            const currentTalents = filterEmpty(sheet.item?.data?.data?.talents);
             currentTalents.push(item.name);
             sheet.item?.update({'data.talents': currentTalents});
             break;
@@ -63,10 +63,14 @@ async function dropItem(item: Item, sheet: ItemSheet) {
         case 'career-container':
         case 'career-money':
         case 'career-weapon':
-            const currentTrappings = sheet.item?.data?.data?.trappings ?? [];
+            const currentTrappings = filterEmpty(sheet.item?.data?.data?.trappings);
             currentTrappings.push(item.name);
             sheet.item?.update({'data.trappings': currentTrappings});
             break;
     }
 
+}
+
+function filterEmpty(list: string[]) {
+    return list != null ? list.filter((element: string) => element != null && element.trim() !== '') : [];
 }
