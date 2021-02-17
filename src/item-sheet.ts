@@ -45,8 +45,8 @@ async function dropItem(item: Item, sheet: ItemSheet) {
     console.dir(sheet);
     console.dir(item);
 
-    switch (item.type?.toLowerCase()) {
-        case 'skill':
+    switch (`${sheet.item?.type}-${item.type?.toLowerCase()}`) {
+        case 'career-skill':
             const currentSkills = sheet.item?.data?.data?.skills ?? [];
             currentSkills.push(item.name);
             sheet.item?.update({'data.skills': currentSkills});
