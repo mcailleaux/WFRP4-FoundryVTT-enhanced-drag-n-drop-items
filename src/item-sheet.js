@@ -1,6 +1,6 @@
 export function initItemSheetDropHandler() {
     const originalDropHandler = ItemSheet.prototype._onDrop;
-    ItemSheet.prototype._onDrop = async (event) => {
+    ItemSheet.prototype._onDrop = async function (event) {
         try {
             const data = JSON.parse(event.dataTransfer.getData('text/plain'));
             await dropData(data, this);
