@@ -5,9 +5,14 @@ before_script:
   - apt install -y git-core
   - apt install -y zip
 
+variables:
+  GIT_DEPTH: 0
+  GIT_STRATEGY: fetch
+
 stages:
   - test
   - build
+  - deploy
 
 test:
   stage: test
@@ -31,3 +36,11 @@ build:
   only:
     - tags
     - master
+
+deploy:
+  stage: deploy
+  script:
+    - git checkout dist
+    - git add dist/wfrp4-enhanced-drag-n-drop-items.zip
+    - git commit -f -m "push artifact on dist branch"
+    - git push
