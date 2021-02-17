@@ -2,6 +2,7 @@ image: node:14.15.5-stretch-slim
 
 before_script:
   - apt update
+  - apt install -y git-core
   - apt install -y zip
 
 stages:
@@ -15,10 +16,8 @@ test:
 
 build:
   stage: build
-  before_script:
-    - npm install -g typescript@4.0.5
   script:
-    - npm ci --only=prod
+    - npm ci
     - npm run build
     - zip wfrp4-enhanced-drag-n-drop-items.zip -r dist/*.* -x ".*"
   artifacts:
