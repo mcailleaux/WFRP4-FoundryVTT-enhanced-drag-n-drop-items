@@ -1,9 +1,4 @@
-image: node:14.15.5-stretch-slim
-
-before_script:
-  - apt update
-  - apt install -y git-core
-  - apt install -y zip
+image: docker-repository-greenskin.cailleaux.com/greenskin/ci-builder-node14:2.0
 
 variables:
   GIT_DEPTH: 0
@@ -47,6 +42,7 @@ deploy:
     - git merge origin/master
     - git add -f dist/wfrp4-enhanced-drag-n-drop-items.zip
     - git commit -m "push artifact on dist branch"
+    - git remote set-url origin $GIT_SSH_URL
     - git push origin HEAD:dist
   only:
     - master
