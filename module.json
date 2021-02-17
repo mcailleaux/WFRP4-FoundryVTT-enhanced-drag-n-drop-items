@@ -6,6 +6,12 @@
   "minimumCoreVersion": "0.7.9",
   "compatibleCoreVersion": "0.7.9",
   "author": "Skeroujvapluvit",
+  "dependencies": [
+    {
+      "name": "wfrp4e",
+      "type": "system"
+    }
+  ],
   "esmodules": [
     "main.js"
   ],
