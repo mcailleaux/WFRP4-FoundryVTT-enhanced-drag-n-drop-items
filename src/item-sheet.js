@@ -33,12 +33,21 @@ async function dropData(data, sheet) {
     }
 }
 
-async function dropItem(item, sheet) {
-    if (item == null) {
+async function dropItem(item: Item, sheet: ItemSheet) {
+    if (item == null || sheet == null) {
         return;
     }
     console.dir(sheet);
     console.dir(item);
+
+    switch (item.type?.toLowerCase()) {
+        case 'skill':
+            const currentSkills = sheet.item?.data?.skills ?? [];
+            currentSkills.push(item.name);
+            sheet.item?.update('data.skills', currentSkills);
+            break;
+    }
+
     // let value = target.value;
     // if (value == null || value.trim() === '') {
     //     value = item.name;
