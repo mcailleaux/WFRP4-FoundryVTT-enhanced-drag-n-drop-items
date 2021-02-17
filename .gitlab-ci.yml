@@ -37,9 +37,6 @@ deploy:
   script:
     - git config --global user.email "$GIT_USER_EMAIL"
     - git config --global user.name "$GIT_USER_NAME"
-    - git fetch
-    - git checkout origin/dist
-    - git merge origin/master
     - git add -f dist/wfrp4-enhanced-drag-n-drop-items.zip
     - git commit -m "push artifact on dist branch"
     - git remote set-url origin $GIT_SSH_URL
