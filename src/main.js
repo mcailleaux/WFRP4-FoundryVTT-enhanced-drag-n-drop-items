@@ -1,6 +1,6 @@
 'use strict';
 
-import {initItemSheetDropHandler} from './item-sheet';
+import {initItemSheetDropHandler} from './item-sheet.js';
 
 Hooks.on('init', () => {
     initItemSheetDropHandler();
