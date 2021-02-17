@@ -19,12 +19,14 @@ build:
   script:
     - npm ci
     - npm run build
-    - zip wfrp4-enhanced-drag-n-drop-items.zip -r dist/*.* -x ".*"
+    - cp module.json dist
+    - cd dist
+    - zip wfrp4-enhanced-drag-n-drop-items.zip -r *.* -x ".*"
   artifacts:
     name: wfrp4-enhanced-drag-n-drop-items
     when: on_success
     paths:
-      - wfrp4-enhanced-drag-n-drop-items.zip
+      - dist/wfrp4-enhanced-drag-n-drop-items.zip
   when: on_success
   only:
     - tags
