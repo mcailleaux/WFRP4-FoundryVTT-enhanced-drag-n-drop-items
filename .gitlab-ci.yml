@@ -47,6 +47,6 @@ deploy:
     - git merge origin/master
     - git add -f dist/wfrp4-enhanced-drag-n-drop-items.zip
     - git commit -m "push artifact on dist branch"
-    - git push origin/dist HEAD:dist
+    - git push origin HEAD:dist
   only:
     - master
