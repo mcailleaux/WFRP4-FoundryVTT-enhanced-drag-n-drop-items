@@ -40,6 +40,8 @@ build:
 deploy:
   stage: deploy
   script:
+    - git config --global user.email "$GIT_USER_EMAIL"
+    - git config --global user.name "$GIT_USER_NAME"
     - git fetch
     - git checkout origin/dist
     - git merge origin/master
