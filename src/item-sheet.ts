@@ -47,9 +47,9 @@ async function dropItem(item: Item, sheet: ItemSheet) {
 
     switch (item.type?.toLowerCase()) {
         case 'skill':
-            const currentSkills = sheet.item?.data?.skills ?? [];
+            const currentSkills = sheet.item?.data?.data?.skills ?? [];
             currentSkills.push(item.name);
-            sheet.item?.update('data.skills', currentSkills);
+            sheet.item?.update({'data.skills': currentSkills});
             break;
     }
 
