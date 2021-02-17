@@ -45,11 +45,27 @@ async function dropItem(item: Item, sheet: ItemSheet) {
     console.dir(sheet);
     console.dir(item);
 
-    switch (`${sheet.item?.type}-${item.type?.toLowerCase()}`) {
+    switch (`${sheet.item?.type?.toLowerCase()}-${item.type?.toLowerCase()}`) {
         case 'career-skill':
             const currentSkills = sheet.item?.data?.data?.skills ?? [];
             currentSkills.push(item.name);
             sheet.item?.update({'data.skills': currentSkills});
+            break;
+        case 'career-talent':
+        case 'career-trait':
+            const currentTalents = sheet.item?.data?.data?.talents ?? [];
+            currentTalents.push(item.name);
+            sheet.item?.update({'data.talents': currentTalents});
+            break;
+        case 'career-trapping':
+        case 'career-ammunition':
+        case 'career-armour':
+        case 'career-container':
+        case 'career-money':
+        case 'career-weapon':
+            const currentTrappings = sheet.item?.data?.data?.trappings ?? [];
+            currentTrappings.push(item.name);
+            sheet.item?.update({'data.trappings': currentTrappings});
             break;
     }
 

@@ -27,10 +27,9 @@
       "path": "lang/fr.json"
     }
   ],
-  "url": "",
-  "download": "",
-  "manifest": "",
-  "readme": "",
-  "changelog": "",
-  "bugs": ""
+  "url": "https://github.com/mcailleaux/WFRP4-FoundryVTT-enhanced-drag-n-drop-items",
+  "download": "https://github.com/mcailleaux/WFRP4-FoundryVTT-enhanced-drag-n-drop-items/blob/dist/dist/wfrp4-enhanced-drag-n-drop-items.zip?raw=true",
+  "manifest": "https://raw.githubusercontent.com/mcailleaux/WFRP4-FoundryVTT-enhanced-drag-n-drop-items/dist/module.json",
+  "readme": "https://raw.githubusercontent.com/mcailleaux/WFRP4-FoundryVTT-enhanced-drag-n-drop-items/dist/README.md",
+  "changelog": "https://raw.githubusercontent.com/mcailleaux/WFRP4-FoundryVTT-enhanced-drag-n-drop-items/dist/CHANGELOG.md"
 }
