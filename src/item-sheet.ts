@@ -1,11 +1,16 @@
 export function initItemSheetDropHandler() {
+
+    // @ts-ignore
     const originalDropHandler = ItemSheet.prototype._onDrop;
+    // @ts-ignore
     ItemSheet.prototype._onDrop = async function (event) {
-        try {
-            const data = JSON.parse(event.dataTransfer.getData('text/plain'));
-            await dropData(data, this);
-        } catch (err) {
-            console.error(err);
+        if (event?.dataTransfer != null) {
+            try {
+                const data = JSON.parse(event.dataTransfer.getData('text/plain'));
+                await dropData(data, this);
+            } catch (err) {
+                console.error(err);
+            }
         }
         if (originalDropHandler != null) {
             originalDropHandler.call(this, event);
@@ -13,7 +18,7 @@ export function initItemSheetDropHandler() {
     };
 
     const defaultOption = ItemSheet.defaultOptions;
-    defaultOption.dragDrop.push({dragSelector: '.item-list .item', dropSelector: null});
+    defaultOption.dragDrop?.push({dragSelector: '.item-list .item', dropSelector: null});
     Object.defineProperty(ItemSheet, 'defaultOptions', {
         get: () => {
             return defaultOption;
@@ -21,13 +26,13 @@ export function initItemSheetDropHandler() {
     });
 }
 
-async function dropData(data, sheet) {
+async function dropData(data: any, sheet: ItemSheet) {
     if (data == null) {
         return;
     }
     switch (data.type) {
         case 'Item':
-            const item = await Item.fromDropData(data);
+            const item: Item = <Item>await Item.fromDropData(data);
             await dropItem(item, sheet);
             break;
     }
