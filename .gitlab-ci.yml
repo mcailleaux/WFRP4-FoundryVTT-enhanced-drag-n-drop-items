@@ -41,7 +41,8 @@ deploy:
   stage: deploy
   script:
     - git fetch
-    - git checkout dist
+    - git checkout -b dist
+    - git merge master
     - git add dist/wfrp4-enhanced-drag-n-drop-items.zip
     - git commit -f -m "push artifact on dist branch"
     - git push
