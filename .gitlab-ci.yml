@@ -43,8 +43,8 @@ deploy:
     - git fetch
     - git checkout origin/dist
     - git merge origin/master
-    - git add dist/wfrp4-enhanced-drag-n-drop-items.zip
-    - git commit -f -m "push artifact on dist branch"
+    - git add -f dist/wfrp4-enhanced-drag-n-drop-items.zip
+    - git commit -m "push artifact on dist branch"
     - git push
   only:
     - master
