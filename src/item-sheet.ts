@@ -53,13 +53,4 @@ async function dropItem(item: Item, sheet: ItemSheet) {
             break;
     }
 
-    // let value = target.value;
-    // if (value == null || value.trim() === '') {
-    //     value = item.name;
-    // } else {
-    //     value += ', ' + item.name;
-    // }
-    //
-    // target.value = value;
-
 }

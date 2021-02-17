@@ -16,3 +16,6 @@
 
 #node modules
 node_modules
+
+# distribution
+dist

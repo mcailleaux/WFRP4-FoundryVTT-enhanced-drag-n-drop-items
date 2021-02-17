@@ -1,13 +1,13 @@
 {
-  "name": "enhanced-drag-n-drop-items",
-  "title": "Enhanced Drag and Drop Items",
-  "description": "When Drop object on input or textArea with class specified on config for items type, the name of item is added to the input or textarea value.",
+  "name": "wfrp4-enhanced-drag-n-drop-items",
+  "title": "[WFRP4] Enhanced Drag and Drop Items",
+  "description": "Drag and Drop function for Items",
   "version": "1.0.0",
-  "minimumCoreVersion" : "0.7.9",
-  "compatibleCoreVersion" : "0.7.9",
+  "minimumCoreVersion": "0.7.9",
+  "compatibleCoreVersion": "0.7.9",
   "author": "Skeroujvapluvit",
   "esmodules": [
-    "src/main.js"
+    "main.js"
   ],
   "languages": [
     {
