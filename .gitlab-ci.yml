@@ -1,0 +1,30 @@
+image: node:14.15.5-stretch-slim
+
+before_script:
+  - apt update
+  - apt install -y zip
+
+stages:
+  - test
+  - build
+
+test:
+  stage: test
+  script:
+    - node -v
+
+build:
+  stage: build
+  script:
+    - npm ci
+    - npm run build
+    - zip wfrp4-enhanced-drag-n-drop-items.zip -r dist/*.* -x ".*"
+  artifacts:
+    name: wfrp4-enhanced-drag-n-drop-items
+    when: on_success
+    paths:
+      - wfrp4-enhanced-drag-n-drop-items.zip
+  when: on_success
+  only:
+    - tags
+    - master
