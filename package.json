@@ -4,6 +4,6 @@
   },
   "devDependencies": {
     "typescript": "4.0.5",
-    "foundry-pc-types": "git+https://gitlab.com/foundry-projects/foundry-pc/foundry-pc-types.git"
+    "foundry-pc-types": "gitlab:foundry-projects/foundry-pc/foundry-pc-types"
   }
 }
