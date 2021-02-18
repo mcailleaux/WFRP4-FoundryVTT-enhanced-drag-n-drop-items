@@ -5,14 +5,8 @@ variables:
   GIT_STRATEGY: fetch
 
 stages:
-  - test
   - build
   - deploy
-
-test:
-  stage: test
-  script:
-    - node -v
 
 build:
   stage: build
@@ -27,10 +21,27 @@ build:
     when: on_success
     paths:
       - dist/wfrp4-enhanced-drag-n-drop-items.zip
-  when: on_success
   only:
     - tags
     - master
+
+build_beta:
+  stage: build
+  script:
+    - npm ci
+    - npm run build
+    - cp module-beta.json dist/module.json
+    - cd dist
+    - zip wfrp4-enhanced-drag-n-drop-items.zip -r *.* src -x ".*"
+  artifacts:
+    name: wfrp4-enhanced-drag-n-drop-items
+    when: on_success
+    paths:
+      - dist/wfrp4-enhanced-drag-n-drop-items.zip
+  rules:
+    - if: '$CI_COMMIT_BRANCH =~ /^(dev)\/.*$/'
+      when: on_success
+
 
 deploy:
   stage: deploy
@@ -43,3 +54,18 @@ deploy:
     - git push -f origin HEAD:dist
   only:
     - master
+
+deploy_beta:
+  stage: deploy
+  script:
+    - git config --global user.email "$GIT_USER_EMAIL"
+    - git config --global user.name "$GIT_USER_NAME"
+    - git add -f dist/wfrp4-enhanced-drag-n-drop-items.zip
+    - git commit -m "push artifact on dist-beta branch"
+    - git remote set-url origin $GIT_SSH_URL
+    - git push -f origin HEAD:dist-beta
+  rules:
+    - if: '$CI_COMMIT_BRANCH =~ /^(dev)\/.*$/'
+      when: on_success
+
+

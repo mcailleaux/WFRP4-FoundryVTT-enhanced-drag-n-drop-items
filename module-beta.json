@@ -1,0 +1,35 @@
+{
+  "name": "wfrp4-enhanced-drag-n-drop-items-beta",
+  "title": "[WFRP4] Enhanced Drag and Drop Items BETA version",
+  "description": "Drag and Drop function for Items",
+  "version": "1.1.0",
+  "minimumCoreVersion": "0.7.9",
+  "compatibleCoreVersion": "0.7.9",
+  "author": "Skeroujvapluvit",
+  "dependencies": [
+    {
+      "name": "wfrp4e",
+      "type": "system"
+    }
+  ],
+  "esmodules": [
+    "main.js"
+  ],
+  "languages": [
+    {
+      "lang": "en",
+      "name": "English",
+      "path": "lang/en.json"
+    },
+    {
+      "lang": "fr",
+      "name": "Français",
+      "path": "lang/fr.json"
+    }
+  ],
+  "url": "https://github.com/mcailleaux/WFRP4-FoundryVTT-enhanced-drag-n-drop-items/tree/dist-beta",
+  "download": "https://github.com/mcailleaux/WFRP4-FoundryVTT-enhanced-drag-n-drop-items/blob/dist-beta/dist/wfrp4-enhanced-drag-n-drop-items.zip?raw=true",
+  "manifest": "https://raw.githubusercontent.com/mcailleaux/WFRP4-FoundryVTT-enhanced-drag-n-drop-items/dist-beta/module-beta.json",
+  "readme": "https://raw.githubusercontent.com/mcailleaux/WFRP4-FoundryVTT-enhanced-drag-n-drop-items/dist-beta/README.md",
+  "changelog": "https://raw.githubusercontent.com/mcailleaux/WFRP4-FoundryVTT-enhanced-drag-n-drop-items/dist-beta/CHANGELOG.md"
+}

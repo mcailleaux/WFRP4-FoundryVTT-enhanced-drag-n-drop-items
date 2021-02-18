@@ -42,8 +42,6 @@ async function dropItem(item: Item, sheet: ItemSheet) {
     if (item == null || sheet == null) {
         return;
     }
-    console.dir(sheet);
-    console.dir(item);
 
     switch (`${sheet.item?.type?.toLowerCase()}-${item.type?.toLowerCase()}`) {
         case 'career-skill':
@@ -67,10 +65,21 @@ async function dropItem(item: Item, sheet: ItemSheet) {
             currentTrappings.push(item.name);
             sheet.item?.update({'data.trappings': currentTrappings});
             break;
+        case 'talent-skill':
+            console.dir(sheet);
+            console.dir(item);
+            const currentTests = trimedFilterEmpty(sheet.item?.data?.data?.tests?.split(','));
+            currentTests.push(item.name);
+            sheet.item?.update({'data.tests': currentTests.join(', ')});
+            break;
     }
 
 }
 
 function filterEmpty(list: string[]) {
     return list != null ? list.filter((element: string) => element != null && element.trim() !== '') : [];
+}
+
+function trimedFilterEmpty(list: string[]) {
+    return filterEmpty(list).map((element) => element.trim());
 }
