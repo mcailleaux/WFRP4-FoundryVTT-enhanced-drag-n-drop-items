@@ -1,6 +1,6 @@
 ## In development
 
-## 1.1.1
+## 1.1.0
 ### New features
 - Drop skill to talent sheet add it to tests list
 
