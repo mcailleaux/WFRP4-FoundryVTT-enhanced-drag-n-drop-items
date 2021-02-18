@@ -68,9 +68,9 @@ async function dropItem(item: Item, sheet: ItemSheet) {
         case 'talent-skill':
             console.dir(sheet);
             console.dir(item);
-            const currentTests = trimedFilterEmpty(sheet.item?.data?.data?.tests?.split(','));
+            const currentTests = trimedFilterEmpty(sheet.item?.data?.data?.tests?.value?.split(','));
             currentTests.push(item.name);
-            sheet.item?.update({'data.tests': currentTests.join(', ')});
+            sheet.item?.update({'data.tests.value': currentTests.join(', ')});
             break;
     }
 
