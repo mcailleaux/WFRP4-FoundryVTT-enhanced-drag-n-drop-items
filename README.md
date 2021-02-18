@@ -12,3 +12,6 @@ This module allow simple drop function for items.
 
 ## Module link
 https://raw.githubusercontent.com/mcailleaux/WFRP4-FoundryVTT-enhanced-drag-n-drop-items/dist/module.json
+
+## Module Beta link
+https://raw.githubusercontent.com/mcailleaux/WFRP4-FoundryVTT-enhanced-drag-n-drop-items/dist-beta/module-beta.json
