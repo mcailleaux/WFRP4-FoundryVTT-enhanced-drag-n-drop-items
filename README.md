@@ -10,6 +10,9 @@ This module allow simple drop function for items.
 ## Drop trappig or ammunition or armour or container or money or weapon to career sheet
 ![Drop trapping demonstration](./media/foundryvttreadmedroptrappings.gif)
 
+## Drop skill to talent sheet
+![Drop skill demonstration](./media/foundryvttreadmedropskillstotalent.gif)
+
 ## Module link
 https://raw.githubusercontent.com/mcailleaux/WFRP4-FoundryVTT-enhanced-drag-n-drop-items/dist/module.json
 
